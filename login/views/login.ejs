@@ -1,0 +1,46 @@
+<%-include("header")-%>
+
+    <section>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+            </div>
+        </nav>
+    </section>
+
+    <div class="container">
+        <div class="login-form">
+            <h2 class="text-center">Wanderlust Adventures</h2>
+            <form action="/login" method="POST" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Email Address:</label>
+                    <input type="email" class="form-control" id="username" name="email"
+                        placeholder="Enter Email Address" required>
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="pswrd" name="password" placeholder="Enter Password"
+                        required>
+                    <br>
+                    <%if(locals.err){%>
+                       <p class="text-danger  fw-bold fst-italic "><%=locals.err%></p> 
+                    <%}%>
+                </div>
+
+
+                <section class="row">
+                    <div class="col-md-6"><button type="submit" id="loginButton"
+                            class="btn btn-primary btn-block btn-block rounded-pill ">Sign in</button></div>
+                    <a href="" class="forgot">forgot your password?</a>
+                    <a href="" class="forgot">Not A Member? Join Now</a>
+
+                </section>
+            </form>
+            <%if(locals.logout){ %>
+            <div class="alter alert-success text-center">
+                <%=logout%>
+            </div>
+        <% }%>
+        </div>
+    </div>
+
+    <%-include("footer") -%>
